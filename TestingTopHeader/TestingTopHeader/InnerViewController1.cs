@@ -30,8 +30,9 @@ namespace TestingTopHeader
             View.BackgroundColor = UIColor.Orange;
 
             InitializeScrollView();
-            InitializeInnerNav1Button();
             InitializeInnerNav2Button();
+            InitializeInnerNav3Button();
+            InitializeInnerNav4Button();
             InitializeOuterNavButton();
             InitializeUseAnimationSwitch();
         }
@@ -121,7 +122,7 @@ namespace TestingTopHeader
             _scrollView.BottomAnchor.ConstraintEqualTo(View.BottomAnchor).Active = true;
         }
 
-        private void InitializeInnerNav1Button()
+        private void InitializeInnerNav2Button()
         {
             var button = CreteButton("Next page in inner small header", 100);
             button.TouchUpInside += (object sender, EventArgs e) =>
@@ -130,7 +131,7 @@ namespace TestingTopHeader
             };
         }
 
-        private void InitializeInnerNav2Button()
+        private void InitializeInnerNav3Button()
         {
             var button = CreteButton("Next page in inner big header", 150);
             button.TouchUpInside += (object sender, EventArgs e) =>
@@ -139,9 +140,18 @@ namespace TestingTopHeader
             };
         }
 
+        private void InitializeInnerNav4Button()
+        {
+            var button = CreteButton("Next page in inner auto header", 200);
+            button.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                NavigationController?.PushViewController(new InnerViewController4(), true);
+            };
+        }
+
         private void InitializeOuterNavButton()
         {
-            var button = CreteButton("Next page in outer", 200);
+            var button = CreteButton("Next page in outer", 250);
             button.TouchUpInside += (object sender, EventArgs e) =>
             {
                 var parentNavController = (UINavigationController)ParentViewController.ParentViewController.ParentViewController;
