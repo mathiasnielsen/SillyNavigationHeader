@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{4FA7D0A7-D4B3-4FA5-947F-00879706293E}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestingTopHeader/InnerViewController1.cs">
+    <Files>
+      <File FileName="TestingTopHeader/InnerViewController1.cs" Line="8" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../../Desktop/Bluefragments/Projects/BeO/src/BC.Mobile.Core/Product/PortableAudio/StereoPairing/StereoPairingApi.cs" line="56" offsetX="796" offsetY="880" expression="PortableAudioProduct" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.TestingTopHeader PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.20BC5CA0-DB85-4FB2-9861-52725B6C405B" automaticSigning="False" />
+</Properties>
