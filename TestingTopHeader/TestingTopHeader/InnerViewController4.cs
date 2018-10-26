@@ -2,19 +2,19 @@
 
 namespace TestingTopHeader
 {
-    public class InnerViewController2 : UIViewController
+    public class InnerViewController4 : UIViewController
     {
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
-            Title = this.GetType().Name + "Small navbar";
+            Title = this.GetType().Name + "Auto navbar";
             View.BackgroundColor = UIColor.Brown;
 
             if (NavigationController != null)
             {
                 NavigationController.NavigationBar.PrefersLargeTitles = true;
-                NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
+                NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Automatic;
             }
         }
     }

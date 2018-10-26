@@ -16,8 +16,9 @@ namespace TestingTopHeader
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-
             NavigationController?.SetNavigationBarHidden(false, true);
+
+            NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
         }
     }
 }

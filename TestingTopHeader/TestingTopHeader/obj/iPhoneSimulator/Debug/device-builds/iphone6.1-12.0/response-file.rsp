@@ -1,5 +1,5 @@
---cache=/Users/Kirkegaard/Projects/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-12.0/mtouch-cache
---sim=/Users/Kirkegaard/Projects/TestingTopHeader/TestingTopHeader/bin/iPhoneSimulator/Debug/device-builds/iphone6.1-12.0/TestingTopHeader.app
+--cache=/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-12.0/mtouch-cache
+--sim=/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/bin/iPhoneSimulator/Debug/device-builds/iphone6.1-12.0/TestingTopHeader.app
 --executable=TestingTopHeader
 --debug
 --profiling
@@ -10,7 +10,7 @@
 --aot-options=-O=-float32
 --http-message-handler=NSUrlSessionHandler
 --abi=x86_64
---symbollist=/Users/Kirkegaard/Projects/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-12.0/mtouch-symbols.list
+--symbollist=/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-12.0/mtouch-symbols.list
 --dsym=no
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll
@@ -18,5 +18,5 @@
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.dll
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll
 --target-framework=Xamarin.iOS,v1.0
---root-assembly=/Users/Kirkegaard/Projects/TestingTopHeader/TestingTopHeader/bin/iPhoneSimulator/Debug/TestingTopHeader.exe
+--root-assembly=/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/bin/iPhoneSimulator/Debug/TestingTopHeader.exe
 
