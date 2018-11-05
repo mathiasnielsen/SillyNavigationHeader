@@ -9,7 +9,7 @@ namespace TestingTopHeader
             base.ViewDidLoad();
 
             Title = this.GetType().Name + "Auto navbar";
-            View.BackgroundColor = UIColor.Brown;
+            View.BackgroundColor = UIColor.Red;
 
             if (NavigationController != null)
             {

@@ -21,26 +21,31 @@ namespace TestingTopHeader
         {
             base.ViewDidLoad();
 
-            if (NavigationController != null)
-            {
-                NavigationController.NavigationBar.PrefersLargeTitles = true;
-            }
-
             Title = this.GetType().Name;
             View.BackgroundColor = UIColor.Orange;
 
             InitializeScrollView();
+
+            InitializeUseAnimationSwitch();
+
             InitializeInnerNav2Button();
             InitializeInnerNav3Button();
             InitializeInnerNav4Button();
-            InitializeOuterNavButton();
-            InitializeUseAnimationSwitch();
+
+            InitializeOuterNav2Button();
+            InitializeOuterNav3Button();
+            InitializeOuterNav4Button();
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
             LogNavigationInfo();
+
+            if (NavigationController != null)
+            {
+                NavigationController.NavigationBar.PrefersLargeTitles = true;
+            }
 
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Automatic;
         }
@@ -87,6 +92,9 @@ namespace TestingTopHeader
         {
             base.ViewDidDisappear(animated);
             LogNavigationInfo();
+
+            // NOTE! Navigating to an OuterViewController with PrefersLargeTitles = true, the current inner navigationcontroller cannot have the same property set to true.
+            ////NavigationController.NavigationBar.PrefersLargeTitles = false;
         }
 
         private void LogNavigationInfo([CallerMemberName] string callerName = "")
@@ -149,14 +157,36 @@ namespace TestingTopHeader
             };
         }
 
-        private void InitializeOuterNavButton()
+        private void InitializeOuterNav2Button()
         {
-            var button = CreteButton("Next page in outer", 250);
+            var button = CreteButton("Next page in outer smaller header", 250);
             button.TouchUpInside += (object sender, EventArgs e) =>
             {
                 var parentNavController = (UINavigationController)ParentViewController.ParentViewController.ParentViewController;
                 var useAnimation = _useAnimationSwitch.On;
                 parentNavController?.PushViewController(new OuterViewController2(), useAnimation);
+            };
+        }
+
+        private void InitializeOuterNav3Button()
+        {
+            var button = CreteButton("Next page in outer big header", 300);
+            button.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                var parentNavController = (UINavigationController)ParentViewController.ParentViewController.ParentViewController;
+                var useAnimation = _useAnimationSwitch.On;
+                parentNavController?.PushViewController(new OuterViewController3(), useAnimation);
+            };
+        }
+
+        private void InitializeOuterNav4Button()
+        {
+            var button = CreteButton("Next page in outer auto header", 350);
+            button.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                var parentNavController = (UINavigationController)ParentViewController.ParentViewController.ParentViewController;
+                var useAnimation = _useAnimationSwitch.On;
+                parentNavController?.PushViewController(new OuterViewController4(), useAnimation);
             };
         }
 

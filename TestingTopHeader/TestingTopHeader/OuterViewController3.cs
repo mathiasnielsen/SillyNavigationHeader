@@ -2,23 +2,23 @@
 
 namespace TestingTopHeader
 {
-    public class OuterViewController2 : UIViewController
+    public class OuterViewController3 : UIViewController
     {
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
-            Title = this.GetType().Name + "Small navBar";
+            Title = this.GetType().Name + "Big navBar";
 
-            View.BackgroundColor = UIColor.Blue;
+            View.BackgroundColor = UIColor.Cyan;
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            NavigationController.NavigationBar.PrefersLargeTitles = false;
+            NavigationController.NavigationBar.PrefersLargeTitles = true;
             NavigationController?.SetNavigationBarHidden(false, true);
-            NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
+            NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Always;
         }
     }
 }

@@ -11,12 +11,12 @@
 /Users/Kirkegaard/Projects/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/TestingTopHeader.pdb
 /Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/bin/iPhoneSimulator/Debug/TestingTopHeader.exe
 /Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/bin/iPhoneSimulator/Debug/TestingTopHeader.pdb
-/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-12.0/actool/_PartialAppManifest.items
-/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-12.0/actool/_BundleResourceWithLogicalName.items
-/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-12.0/coremlc/_PartialAppManifest.items
-/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-12.0/coremlc/_BundleResourceWithLogicalName.items
-/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-12.0/optimized/
 /Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/TestingTopHeader.csprojAssemblyReference.cache
 /Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/TestingTopHeader.csproj.CoreCompileInputs.cache
 /Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/TestingTopHeader.exe
 /Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/TestingTopHeader.pdb
+/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-11.4/actool/_PartialAppManifest.items
+/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-11.4/actool/_BundleResourceWithLogicalName.items
+/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-11.4/coremlc/_PartialAppManifest.items
+/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-11.4/coremlc/_BundleResourceWithLogicalName.items
+/Users/Kirkegaard/Desktop/SillyNavigationHeader/TestingTopHeader/TestingTopHeader/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-11.4/optimized/

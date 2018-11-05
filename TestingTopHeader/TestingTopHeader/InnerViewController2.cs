@@ -10,6 +10,11 @@ namespace TestingTopHeader
 
             Title = this.GetType().Name + "Small navbar";
             View.BackgroundColor = UIColor.Brown;
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
 
             if (NavigationController != null)
             {

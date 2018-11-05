@@ -105,6 +105,8 @@
     <Compile Include="OuterViewController2.cs" />
     <Compile Include="InnerViewController3.cs" />
     <Compile Include="InnerViewController4.cs" />
+    <Compile Include="OuterViewController3.cs" />
+    <Compile Include="OuterViewController4.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

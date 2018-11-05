@@ -28,10 +28,14 @@ namespace TestingTopHeader
 
             var navigationController = new UINavigationController();
             var mainViewController = new OuterViewController1();
-
             navigationController.PushViewController(mainViewController, true);
-            Window.RootViewController = navigationController;
 
+            var masterViewController = new UIViewController();
+            masterViewController.AddChildViewController(navigationController);
+            masterViewController.View.AddSubview(navigationController.View);
+            navigationController.DidMoveToParentViewController(masterViewController);
+
+            Window.RootViewController = masterViewController;
             Window.MakeKeyAndVisible();
 
             return true;
