@@ -26,16 +26,31 @@ namespace TestingTopHeader
 
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-            var navigationController = new UINavigationController();
-            var mainViewController = new OuterViewController1();
-            navigationController.PushViewController(mainViewController, true);
+            var pagesToTest = PagesToTest.TranslucentPages;
+            switch (pagesToTest)
+            {
+                case PagesToTest.TransitionPages:
+                    var navigationController = new UINavigationController();
+                    var mainViewController = new OuterViewController1();
+                    navigationController.PushViewController(mainViewController, true);
 
-            var masterViewController = new UIViewController();
-            masterViewController.AddChildViewController(navigationController);
-            masterViewController.View.AddSubview(navigationController.View);
-            navigationController.DidMoveToParentViewController(masterViewController);
+                    var masterViewController = new UIViewController();
+                    masterViewController.AddChildViewController(navigationController);
+                    masterViewController.View.AddSubview(navigationController.View);
+                    navigationController.DidMoveToParentViewController(masterViewController);
+                    Window.RootViewController = masterViewController;
+                    break;
 
-            Window.RootViewController = masterViewController;
+                case PagesToTest.TranslucentPages:
+                    var translucentNavController = new UINavigationController();
+                    var translucentStartViewController = new TranslucentTestViewController();
+                    translucentNavController.PushViewController(translucentStartViewController, true);
+                    Window.RootViewController = translucentNavController;
+
+                    NavigationBarStyles.SetDefaultAppearance();
+                    break;
+            }
+
             Window.MakeKeyAndVisible();
 
             return true;
@@ -70,6 +85,12 @@ namespace TestingTopHeader
         public override void WillTerminate(UIApplication application)
         {
             // Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
+        }
+
+        private enum PagesToTest
+        {
+            TransitionPages,
+            TranslucentPages,
         }
     }
 }

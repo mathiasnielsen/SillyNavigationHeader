@@ -91,6 +91,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Pages\HeaderTransitions\" />
+    <Folder Include="Assets\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -99,14 +101,23 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="InnerViewController1.cs" />
-    <Compile Include="OuterViewController1.cs" />
-    <Compile Include="InnerViewController2.cs" />
-    <Compile Include="OuterViewController2.cs" />
-    <Compile Include="InnerViewController3.cs" />
-    <Compile Include="InnerViewController4.cs" />
-    <Compile Include="OuterViewController3.cs" />
-    <Compile Include="OuterViewController4.cs" />
+    <Compile Include="Pages\NavigationBarStyle\AnotherTranslucentViewController.cs" />
+    <Compile Include="Pages\NavigationBarStyle\TranslucentTestViewController.cs" />
+    <Compile Include="Pages\NavigationBarStyle\ViewBase.cs" />
+    <Compile Include="Pages\NavigationBarStyle\TranslucentNavigationController.cs" />
+    <Compile Include="Pages\NavigationBarStyle\NavigationBarStyles.cs" />
+    <Compile Include="Pages\AutoLayoutToolBox.cs" />
+    <Compile Include="Pages\HeaderTransitions\InnerViewController1.cs" />
+    <Compile Include="Pages\HeaderTransitions\InnerViewController2.cs" />
+    <Compile Include="Pages\HeaderTransitions\InnerViewController3.cs" />
+    <Compile Include="Pages\HeaderTransitions\InnerViewController4.cs" />
+    <Compile Include="Pages\HeaderTransitions\OuterViewController1.cs" />
+    <Compile Include="Pages\HeaderTransitions\OuterViewController2.cs" />
+    <Compile Include="Pages\HeaderTransitions\OuterViewController3.cs" />
+    <Compile Include="Pages\HeaderTransitions\OuterViewController4.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Assets\test_image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
