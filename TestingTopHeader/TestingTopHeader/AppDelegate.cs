@@ -42,8 +42,8 @@ namespace TestingTopHeader
                     break;
 
                 case PagesToTest.TranslucentPages:
-                    var translucentNavController = new UINavigationController();
-                    var translucentStartViewController = new TranslucentTestViewController();
+                    var translucentNavController = new TranslucentNavigationController();
+                    var translucentStartViewController = new Page1Translucent();
                     translucentNavController.PushViewController(translucentStartViewController, true);
                     Window.RootViewController = translucentNavController;
 

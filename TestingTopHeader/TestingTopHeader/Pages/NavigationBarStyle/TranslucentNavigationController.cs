@@ -7,10 +7,24 @@ namespace TestingTopHeader
     {
         private UIVisualEffectView _blurView;
 
+        public TranslucentNavigationController()
+        {
+        }
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            //SetCustomTranslucentNavigationBarStyle();
+            SetCustomTranslucentNavigationBarStyle();
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+        }
+
+        public override void ViewDidLayoutSubviews()
+        {
+            base.ViewDidLayoutSubviews();
         }
 
         private void SetCustomTranslucentNavigationBarStyle()
@@ -33,10 +47,14 @@ namespace TestingTopHeader
 
         private void FullyConstraintTopLayouts(UIView subview, UINavigationBar navigationBar)
         {
+            // One way to find the current statusbar height
+            // This is typically 20points, but 40 during a call, and 0 when hidden.
+            var statusBarHeight = UIApplication.SharedApplication.StatusBarFrame.Size.Height;
+
             subview.TranslatesAutoresizingMaskIntoConstraints = false;
             subview.LeftAnchor.ConstraintEqualTo(navigationBar.LeftAnchor).Active = true;
             subview.RightAnchor.ConstraintEqualTo(navigationBar.RightAnchor).Active = true;
-            subview.TopAnchor.ConstraintEqualTo(navigationBar.TopAnchor, -navigationBar.Frame.Y).Active = true;
+            subview.TopAnchor.ConstraintEqualTo(View.TopAnchor).Active = true;
             subview.BottomAnchor.ConstraintEqualTo(navigationBar.BottomAnchor).Active = true;
         }
     }

@@ -101,8 +101,8 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Pages\NavigationBarStyle\AnotherTranslucentViewController.cs" />
-    <Compile Include="Pages\NavigationBarStyle\TranslucentTestViewController.cs" />
+    <Compile Include="Pages\NavigationBarStyle\Page2Tranclucent.cs" />
+    <Compile Include="Pages\NavigationBarStyle\Page1Translucent.cs" />
     <Compile Include="Pages\NavigationBarStyle\ViewBase.cs" />
     <Compile Include="Pages\NavigationBarStyle\TranslucentNavigationController.cs" />
     <Compile Include="Pages\NavigationBarStyle\NavigationBarStyles.cs" />

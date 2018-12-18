@@ -3,29 +3,27 @@ using UIKit;
 
 namespace TestingTopHeader
 {
-    public class TranslucentTestViewController : ViewBase
+    public class Page1Translucent : ViewBase
     {
         private UIScrollView _scrollView;
 
         private UIImageView _imageView;
         private UILabel _titleLabel;
 
-        public override void ViewDidLoad()
+        protected override void OnPrepareUIElements()
         {
-            base.ViewDidLoad();
-
             Title = "Playground";
             View.BackgroundColor = UIColor.White;
 
             NavigationItem.RightBarButtonItem = new UIBarButtonItem(UIBarButtonSystemItem.Trash);
             NavigationItem.RightBarButtonItem.Clicked += (object sender, EventArgs e) =>
             {
-                NavigationController.PushViewController(new AnotherTranslucentViewController(), true);
+                NavigationController.PushViewController(new Page2Tranclucent(), true);
             };
 
             ////SetCustomTranslucentNavigationBarStyle();
+            InitializeUIElements();
 
-            PrepareUIElements();
             SetupLayoutConstraints();
         }
 
@@ -34,14 +32,22 @@ namespace TestingTopHeader
             base.ViewWillDisappear(animated);
         }
 
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+
+            NavigationController.NavigationBar.PrefersLargeTitles = true;
+            NavigationController.NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
+        }
+
         public override void ViewDidLayoutSubviews()
         {
             base.ViewDidLayoutSubviews();
-
-            _scrollView.ContentSize = new CoreGraphics.CGSize(0, View.Frame.Size.Height);
+            _scrollView.LayoutIfNeeded();
+            _scrollView.ContentSize = new CoreGraphics.CGSize(0, View.Frame.Size.Height + 100);
         }
 
-        private void PrepareUIElements()
+        private void InitializeUIElements()
         {
             _scrollView = new UIScrollView
             {

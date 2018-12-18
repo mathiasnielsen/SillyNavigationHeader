@@ -4,25 +4,36 @@ using UIKit;
 
 namespace TestingTopHeader
 {
-    public class AnotherTranslucentViewController : ViewBase
+    public class Page2Tranclucent : ViewBase
     {
         private UIScrollView _scrollView;
         private UILabel _titleLabel;
         private UIImageView _imageView;
 
-        public override void ViewDidLoad()
+        protected override void OnPrepareUIElements()
         {
-            base.ViewDidLoad();
-
             Title = "Another playground";
             View.BackgroundColor = UIColor.Orange;
             NavigationItem.RightBarButtonItem = new UIBarButtonItem(UIBarButtonSystemItem.Done);
-
-            PrepareUIElements();
+            InitializeUIElements();
             SetupLayoutConstraints();
         }
 
-        private void PrepareUIElements()
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+            NavigationController.NavigationBar.PrefersLargeTitles = false;
+            NavigationController.NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
+        }
+
+        public override void ViewDidLayoutSubviews()
+        {
+            base.ViewDidLayoutSubviews();
+            _scrollView.LayoutIfNeeded();
+            _scrollView.ContentSize = new CoreGraphics.CGSize(0, View.Frame.Size.Height + 100);
+        }
+
+        private void InitializeUIElements()
         {
             _scrollView = new UIScrollView()
             {
@@ -47,6 +58,7 @@ namespace TestingTopHeader
             };
 
             _scrollView.AddSubview(_imageView);
+
         }
 
         private void SetupLayoutConstraints()
