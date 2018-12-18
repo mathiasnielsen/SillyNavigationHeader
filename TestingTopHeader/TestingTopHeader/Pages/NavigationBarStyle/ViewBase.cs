@@ -11,7 +11,7 @@ namespace TestingTopHeader
         {
             base.ViewDidLoad();
             PrepareUIElements();
-            ////SetCustomTranslucentNavigationBarStyle();
+            SetCustomTranslucentNavigationBarStyle();
         }
 
         private void PrepareUIElements()

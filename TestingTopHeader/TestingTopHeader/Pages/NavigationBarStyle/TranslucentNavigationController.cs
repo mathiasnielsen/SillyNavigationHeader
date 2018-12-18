@@ -7,10 +7,6 @@ namespace TestingTopHeader
     {
         private UIVisualEffectView _blurView;
 
-        public TranslucentNavigationController()
-        {
-        }
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -40,11 +36,6 @@ namespace TestingTopHeader
             }
         }
 
-        public override void PushViewController(UIViewController viewController, bool animated)
-        {
-            base.PushViewController(viewController, animated);
-        }
-
         private void FullyConstraintTopLayouts(UIView subview, UINavigationBar navigationBar)
         {
             // One way to find the current statusbar height
@@ -54,7 +45,13 @@ namespace TestingTopHeader
             subview.TranslatesAutoresizingMaskIntoConstraints = false;
             subview.LeftAnchor.ConstraintEqualTo(navigationBar.LeftAnchor).Active = true;
             subview.RightAnchor.ConstraintEqualTo(navigationBar.RightAnchor).Active = true;
-            subview.TopAnchor.ConstraintEqualTo(View.TopAnchor).Active = true;
+
+            // If the navigationbar is hidden, and revealed again, the blur will no longer be visible.
+            ////subview.TopAnchor.ConstraintEqualTo(View.TopAnchor).Active = true;
+
+            // But if we put iy like this, the navigationbar will work when revealed again (and also, cover the statusbar when navbar hidden)
+            subview.TopAnchor.ConstraintEqualTo(navigationBar.TopAnchor, -statusBarHeight).Active = true;
+
             subview.BottomAnchor.ConstraintEqualTo(navigationBar.BottomAnchor).Active = true;
         }
     }
