@@ -21,6 +21,8 @@ namespace TestingTopHeader
                 NavigationController.PushViewController(new Page2Tranclucent(), true);
             };
 
+            // BAD SOLUTION 2 (since this could be done from the NavigationController itself).
+            // GOOD THING: We have the navigation y off set (equal to statusbarheight)
             ////SetCustomTranslucentNavigationBarStyle();
             InitializeUIElements();
 

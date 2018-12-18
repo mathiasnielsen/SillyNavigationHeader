@@ -10,6 +10,8 @@ namespace TestingTopHeader
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            // BEST SOLUTION!
             SetCustomTranslucentNavigationBarStyle();
         }
 
@@ -49,7 +51,8 @@ namespace TestingTopHeader
             // If the navigationbar is hidden, and revealed again, the blur will no longer be visible.
             ////subview.TopAnchor.ConstraintEqualTo(View.TopAnchor).Active = true;
 
-            // But if we put iy like this, the navigationbar will work when revealed again (and also, cover the statusbar when navbar hidden)
+            // But if we put iy like this, the navigationbar will work when revealed again
+            // the status bar will not be covered when the nav is hidden (just like regular translucency)
             subview.TopAnchor.ConstraintEqualTo(navigationBar.TopAnchor, -statusBarHeight).Active = true;
 
             subview.BottomAnchor.ConstraintEqualTo(navigationBar.BottomAnchor).Active = true;

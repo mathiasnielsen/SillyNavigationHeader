@@ -11,7 +11,7 @@ namespace TestingTopHeader
         {
             base.ViewDidLoad();
             PrepareUIElements();
-            SetCustomTranslucentNavigationBarStyle();
+            ////SetCustomTranslucentNavigationBarStyle();
         }
 
         private void PrepareUIElements()
@@ -23,7 +23,9 @@ namespace TestingTopHeader
 
         private void SetCustomTranslucentNavigationBarStyle()
         {
+            // BAD SOLUTION 1
             // The issues about setting it here, on each view, is that the BounceEffect will not work.
+            // But statusbar will look translucent when navigationbar is hidden.
             if (NavigationController != null && NavigationController.NavigationBar != null)
             {
                 var blurEffect = UIBlurEffectStyle.Light;

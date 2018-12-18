@@ -9,6 +9,8 @@ namespace TestingTopHeader
     {
         public static void SetDefaultAppearance()
         {
+            // NOTE! Sometimes, if you scroll to small title, and flip large title, some time bounce is weird.
+            // This must be an OS issue, since it is also happening when we do nothing fancy.
             // The actual translucency.
             UINavigationBar.Appearance.Translucent = true;
 
