@@ -90,13 +90,14 @@ namespace TestingTopHeader
         private static UIImage BlurImage(UIImage image, int blurRadius)
         {
             var beginImage = new CIImage(image);
-            var blur = new CIGaussianBlur();
-            blur.Image = beginImage;
-            blur.Radius = blurRadius;
+            var blur = new CIGaussianBlur
+            {
+                Image = beginImage,
+                Radius = blurRadius
+            };
 
             var outputImage = blur.OutputImage;
-            var context = CIContext.FromOptions(
-                            new CIContextOptions() { UseSoftwareRenderer = true });
+            var context = CIContext.FromOptions(new CIContextOptions() { UseSoftwareRenderer = true });
 
             // Orignal
             ////var cgImage = context.CreateCGImage(

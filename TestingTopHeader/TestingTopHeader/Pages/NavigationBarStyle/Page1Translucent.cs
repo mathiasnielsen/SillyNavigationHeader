@@ -7,8 +7,8 @@ namespace TestingTopHeader
     {
         private UIScrollView _scrollView;
 
-        private UIImageView _imageView;
         private UILabel _titleLabel;
+        private UIImageView _imageView;
 
         protected override void OnPrepareUIElements()
         {
@@ -38,8 +38,15 @@ namespace TestingTopHeader
         {
             base.ViewWillAppear(animated);
 
-            NavigationController.NavigationBar.PrefersLargeTitles = true;
-            NavigationController.NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
+            if (NavigationController != null)
+            {
+                NavigationController.NavigationBar.PrefersLargeTitles = true;
+            }
+
+            NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
+
+            ////NavigationController.NavigationBar.PrefersLargeTitles = true;
+            ////NavigationController.NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
         }
 
         public override void ViewDidLayoutSubviews()
@@ -113,7 +120,7 @@ namespace TestingTopHeader
             _titleLabel.TranslatesAutoresizingMaskIntoConstraints = false;
             _titleLabel.LeftAnchor.ConstraintEqualTo(_scrollView.LeftAnchor).Active = true;
             _titleLabel.RightAnchor.ConstraintEqualTo(_scrollView.RightAnchor).Active = true;
-            _titleLabel.TopAnchor.ConstraintEqualTo(_scrollView.TopAnchor).Active = true;
+            _titleLabel.TopAnchor.ConstraintEqualTo(_scrollView.TopAnchor, 100).Active = true;
 
             _imageView.TranslatesAutoresizingMaskIntoConstraints = false;
             _imageView.LeftAnchor.ConstraintEqualTo(View.LeftAnchor).Active = true;

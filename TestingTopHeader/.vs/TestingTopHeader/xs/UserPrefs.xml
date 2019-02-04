@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{4FA7D0A7-D4B3-4FA5-947F-00879706293E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TestingTopHeader/Pages/NavigationBarStyle/Page2Tranclucent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestingTopHeader/Pages/NavigationBarStyle/Page1Translucent.cs">
     <Files>
-      <File FileName="TestingTopHeader/Pages/NavigationBarStyle/TranslucentNavigationController.cs" Line="15" Column="54" />
-      <File FileName="TestingTopHeader/Pages/NavigationBarStyle/NavigationBarStyles.cs" Line="10" Column="50" />
-      <File FileName="TestingTopHeader/Pages/NavigationBarStyle/Page2Tranclucent.cs" Line="83" Column="24" />
+      <File FileName="TestingTopHeader/Pages/NavigationBarStyle/Page1Translucent.cs" Line="49" Column="34" />
+      <File FileName="TestingTopHeader/Pages/HeaderTransitions/InnerViewController2.cs" Line="19" Column="1" />
+      <File FileName="TestingTopHeader/Pages/HeaderTransitions/InnerViewController3.cs" Line="1" Column="1" />
+      <File FileName="TestingTopHeader/Pages/NavigationBarStyle/Page2Tranclucent.cs" Line="21" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.TestingTopHeader automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2FC0660C-D947-45CD-AFAD-85D79CC6EDC6" />
+  <MonoDevelop.Ide.ItemProperties.TestingTopHeader automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.0F74644E-4BE3-44B5-BE9F-9C48C93F296E" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../../../Desktop/Bluefragments/Projects/BeO/src/BC.Mobile.Core/Product/PortableAudio/StereoPairing/StereoPairingApi.cs" line="56" offsetX="796" offsetY="880" expression="PortableAudioProduct" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>

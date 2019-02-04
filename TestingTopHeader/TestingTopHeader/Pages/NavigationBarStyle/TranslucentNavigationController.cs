@@ -23,6 +23,10 @@ namespace TestingTopHeader
         public override void ViewDidLayoutSubviews()
         {
             base.ViewDidLayoutSubviews();
+            if (_blurView != null)
+            {
+                NavigationBar.SendSubviewToBack(_blurView);
+            }
         }
 
         private void SetCustomTranslucentNavigationBarStyle()

@@ -93,6 +93,7 @@
     <Folder Include="Resources\" />
     <Folder Include="Pages\HeaderTransitions\" />
     <Folder Include="Assets\" />
+    <Folder Include="Pages\Overview\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -115,6 +116,8 @@
     <Compile Include="Pages\HeaderTransitions\OuterViewController2.cs" />
     <Compile Include="Pages\HeaderTransitions\OuterViewController3.cs" />
     <Compile Include="Pages\HeaderTransitions\OuterViewController4.cs" />
+    <Compile Include="Pages\Overview\OverviewView.cs" />
+    <Compile Include="Pages\LayoutInfoHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Assets\test_image.png" />

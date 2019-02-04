@@ -19,13 +19,14 @@ namespace TestingTopHeader
             NavigationItem.RightBarButtonItem = new UIBarButtonItem(UIBarButtonSystemItem.Done);
             InitializeUIElements();
             SetupLayoutConstraints();
+
+            NavigationController.NavigationBar.PrefersLargeTitles = true;
+            NavigationController.NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Always;
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            NavigationController.NavigationBar.PrefersLargeTitles = true;
-            NavigationController.NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
         }
 
         public override void ViewDidLayoutSubviews()
