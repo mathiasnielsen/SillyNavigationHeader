@@ -26,7 +26,7 @@ namespace TestingTopHeader
 
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-            var pagesToTest = PagesToTest.TranslucentPages;
+            var pagesToTest = PagesToTest.FakeTranslucency;
             switch (pagesToTest)
             {
                 case PagesToTest.TransitionPages:
@@ -48,6 +48,12 @@ namespace TestingTopHeader
                     Window.RootViewController = translucentNavController;
 
                     NavigationBarStyles.SetDefaultAppearance();
+                    break;
+
+                case PagesToTest.FakeTranslucency:
+                    var fakeTransController = new FakeTranslucentNavigationBar();
+                    var fakeTransNavController = new UINavigationController(fakeTransController);
+                    Window.RootViewController = fakeTransNavController;
                     break;
             }
 
@@ -91,6 +97,7 @@ namespace TestingTopHeader
         {
             TransitionPages,
             TranslucentPages,
+            FakeTranslucency,
         }
     }
 }

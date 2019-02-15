@@ -6,7 +6,6 @@ namespace TestingTopHeader
     public class Page1Translucent : ViewBase
     {
         private UIScrollView _scrollView;
-
         private UILabel _titleLabel;
         private UIImageView _imageView;
 

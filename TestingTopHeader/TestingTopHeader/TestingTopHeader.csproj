@@ -94,6 +94,7 @@
     <Folder Include="Pages\HeaderTransitions\" />
     <Folder Include="Assets\" />
     <Folder Include="Pages\Overview\" />
+    <Folder Include="Pages\FakeTransclucentBackground\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -118,6 +119,7 @@
     <Compile Include="Pages\HeaderTransitions\OuterViewController4.cs" />
     <Compile Include="Pages\Overview\OverviewView.cs" />
     <Compile Include="Pages\LayoutInfoHelper.cs" />
+    <Compile Include="Pages\FakeTransclucentBackground\FakeTranslucentNavigationBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Assets\test_image.png" />
