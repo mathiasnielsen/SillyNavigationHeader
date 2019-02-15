@@ -10,14 +10,25 @@ namespace TestingTopHeader
         private const int SpacingBetweenNavBars = 2;
 
         private static UIColor SeaShellColor = UIColor.FromRGB(241, 241, 241);
+        private static UIColor ThemeColor = SeaShellColor;
 
-        private readonly UIColor TranslucentBackgroundColor = SeaShellColor.ColorWithAlpha(0.3f);
-        private readonly UIColor ViewBackgroundColor = SeaShellColor.ColorWithAlpha(0.95f);
+        private readonly UIColor TranslucentBackgroundColor = ThemeColor;
+        private readonly UIColor ViewBackgroundColor = ThemeColor;
 
         private UIScrollView _scrollView;
         private UILabel _titleLabel;
         private UIImageView _imageView;
         private UIButton _nextButton;
+        private UILabel _valueLabel;
+
+        private UISlider _changeBlurViewAlphaSlider;
+        private UISlider _changePlainViewAlphaSlider;
+
+        private UIVisualEffectView _blurView01;
+        private UIVisualEffectView _blurView02;
+
+        private UIView _plainView01;
+        private UIView _plainView02;
 
         public override void ViewDidLoad()
         {
@@ -43,76 +54,76 @@ namespace TestingTopHeader
         {
             base.ViewDidLayoutSubviews();
             _scrollView.LayoutIfNeeded();
-            _scrollView.ContentSize = new CoreGraphics.CGSize(0, View.Frame.Size.Height * 2);
+            _scrollView.ContentSize = new CoreGraphics.CGSize(0, View.Frame.Size.Height * 3);
         }
 
         private void InitializeFakeNavBarNoVibrancy()
         {
             var blurEffect = UIBlurEffect.FromStyle(UIBlurEffectStyle.Light);
-            var blurEffectView = new UIVisualEffectView(blurEffect)
+            _blurView01 = new UIVisualEffectView(blurEffect)
             {
                 ////BackgroundColor = seaShellColor.ColorWithAlpha(0.9f),
             };
 
-            var plainWhite = new UIView()
+            _plainView01 = new UIView()
             {
                 BackgroundColor = ViewBackgroundColor,
             };
 
-            View.AddSubview(blurEffectView);
-            blurEffectView.ContentView.Add(plainWhite);
+            View.AddSubview(_blurView01);
+            _blurView01.ContentView.Add(_plainView01);
 
-            blurEffectView.TranslatesAutoresizingMaskIntoConstraints = false;
-            blurEffectView.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor, SpacingBetweenNavBars).Active = true;
-            blurEffectView.LeftAnchor.ConstraintEqualTo(View.LeftAnchor).Active = true;
-            blurEffectView.RightAnchor.ConstraintEqualTo(View.RightAnchor).Active = true;
-            blurEffectView.HeightAnchor.ConstraintEqualTo(HeightOfNavBars).Active = true;
+            _blurView01.TranslatesAutoresizingMaskIntoConstraints = false;
+            _blurView01.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor, SpacingBetweenNavBars).Active = true;
+            _blurView01.LeftAnchor.ConstraintEqualTo(View.LeftAnchor).Active = true;
+            _blurView01.RightAnchor.ConstraintEqualTo(View.RightAnchor).Active = true;
+            _blurView01.HeightAnchor.ConstraintEqualTo(HeightOfNavBars).Active = true;
 
-            plainWhite.TranslatesAutoresizingMaskIntoConstraints = false;
-            plainWhite.TopAnchor.ConstraintEqualTo(blurEffectView.ContentView.TopAnchor).Active = true;
-            plainWhite.LeftAnchor.ConstraintEqualTo(blurEffectView.ContentView.LeftAnchor).Active = true;
-            plainWhite.RightAnchor.ConstraintEqualTo(blurEffectView.ContentView.RightAnchor).Active = true;
-            plainWhite.BottomAnchor.ConstraintEqualTo(blurEffectView.ContentView.BottomAnchor).Active = true;
+            _plainView01.TranslatesAutoresizingMaskIntoConstraints = false;
+            _plainView01.TopAnchor.ConstraintEqualTo(_blurView01.ContentView.TopAnchor).Active = true;
+            _plainView01.LeftAnchor.ConstraintEqualTo(_blurView01.ContentView.LeftAnchor).Active = true;
+            _plainView01.RightAnchor.ConstraintEqualTo(_blurView01.ContentView.RightAnchor).Active = true;
+            _plainView01.BottomAnchor.ConstraintEqualTo(_blurView01.ContentView.BottomAnchor).Active = true;
         }
 
         private void InitializeFakeNavBar()
         {
             var blurEffect = UIBlurEffect.FromStyle(UIBlurEffectStyle.Regular);
-            var blurEffectView = new UIVisualEffectView(blurEffect)
+            _blurView02 = new UIVisualEffectView(blurEffect)
             {
                 ////BackgroundColor = seaShellColor.ColorWithAlpha(0.9f),
             };
 
             var vibrancyEffect = UIVibrancyEffect.FromBlurEffect(blurEffect);
             var vibrancyEffectView = new UIVisualEffectView(vibrancyEffect);
-            var plainWhite = new UIView()
+            _plainView02 = new UIView()
             {
                 BackgroundColor = ViewBackgroundColor,
             };
 
-            View.AddSubview(blurEffectView);
-            blurEffectView.ContentView.Add(vibrancyEffectView);
-            vibrancyEffectView.ContentView.Add(plainWhite);
+            View.AddSubview(_blurView02);
+            _blurView02.ContentView.Add(vibrancyEffectView);
+            vibrancyEffectView.ContentView.Add(_plainView02);
 
-            blurEffectView.TranslatesAutoresizingMaskIntoConstraints = false;
+            _blurView02.TranslatesAutoresizingMaskIntoConstraints = false;
             var index = 1;
             var topOffset = (HeightOfNavBars * index) +  (SpacingBetweenNavBars * (index + 1));
-            blurEffectView.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor, topOffset).Active = true;
-            blurEffectView.LeftAnchor.ConstraintEqualTo(View.LeftAnchor).Active = true;
-            blurEffectView.RightAnchor.ConstraintEqualTo(View.RightAnchor).Active = true;
-            blurEffectView.HeightAnchor.ConstraintEqualTo(HeightOfNavBars).Active = true;
+            _blurView02.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor, topOffset).Active = true;
+            _blurView02.LeftAnchor.ConstraintEqualTo(View.LeftAnchor).Active = true;
+            _blurView02.RightAnchor.ConstraintEqualTo(View.RightAnchor).Active = true;
+            _blurView02.HeightAnchor.ConstraintEqualTo(HeightOfNavBars).Active = true;
 
             vibrancyEffectView.TranslatesAutoresizingMaskIntoConstraints = false;
-            vibrancyEffectView.TopAnchor.ConstraintEqualTo(blurEffectView.ContentView.TopAnchor).Active = true;
-            vibrancyEffectView.LeftAnchor.ConstraintEqualTo(blurEffectView.ContentView.LeftAnchor).Active = true;
-            vibrancyEffectView.RightAnchor.ConstraintEqualTo(blurEffectView.ContentView.RightAnchor).Active = true;
-            vibrancyEffectView.BottomAnchor.ConstraintEqualTo(blurEffectView.ContentView.BottomAnchor).Active = true;
+            vibrancyEffectView.TopAnchor.ConstraintEqualTo(_blurView02.ContentView.TopAnchor).Active = true;
+            vibrancyEffectView.LeftAnchor.ConstraintEqualTo(_blurView02.ContentView.LeftAnchor).Active = true;
+            vibrancyEffectView.RightAnchor.ConstraintEqualTo(_blurView02.ContentView.RightAnchor).Active = true;
+            vibrancyEffectView.BottomAnchor.ConstraintEqualTo(_blurView02.ContentView.BottomAnchor).Active = true;
 
-            plainWhite.TranslatesAutoresizingMaskIntoConstraints = false;
-            plainWhite.TopAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.TopAnchor).Active = true;
-            plainWhite.LeftAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.LeftAnchor).Active = true;
-            plainWhite.RightAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.RightAnchor).Active = true;
-            plainWhite.BottomAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.BottomAnchor).Active = true;
+            _plainView02.TranslatesAutoresizingMaskIntoConstraints = false;
+            _plainView02.TopAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.TopAnchor).Active = true;
+            _plainView02.LeftAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.LeftAnchor).Active = true;
+            _plainView02.RightAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.RightAnchor).Active = true;
+            _plainView02.BottomAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.BottomAnchor).Active = true;
         }
 
         private void InitializeUIElements()
@@ -141,6 +152,38 @@ namespace TestingTopHeader
 
             _nextButton = new UIButton(UIButtonType.System);
             _nextButton.SetTitle("Next", UIControlState.Normal);
+            View.AddSubview(_nextButton);
+
+            _valueLabel = new UILabel();
+            View.AddSubview(_valueLabel);
+
+            _changePlainViewAlphaSlider = new UISlider();
+            _changePlainViewAlphaSlider.MinValue = 0.0f;
+            _changePlainViewAlphaSlider.MaxValue = 1.0f;
+            _changePlainViewAlphaSlider.ValueChanged += (sender, e) =>
+            {
+                var color = ViewBackgroundColor.ColorWithAlpha(_changePlainViewAlphaSlider.Value);
+                _valueLabel.Text = _changePlainViewAlphaSlider.Value.ToString();
+
+                _plainView01.BackgroundColor = color;
+                _plainView02.BackgroundColor = color;
+            };
+
+            View.AddSubview(_changePlainViewAlphaSlider);
+
+            _changeBlurViewAlphaSlider = new UISlider();
+            _changeBlurViewAlphaSlider.MinValue = 0.0f;
+            _changeBlurViewAlphaSlider.MaxValue = 1.0f;
+            _changeBlurViewAlphaSlider.ValueChanged += (sender, e) =>
+            {
+                var color = ViewBackgroundColor.ColorWithAlpha(_changeBlurViewAlphaSlider.Value);
+                _valueLabel.Text = _changeBlurViewAlphaSlider.Value.ToString();
+
+                _blurView01.BackgroundColor = color;
+                _blurView02.BackgroundColor = color;
+            };
+
+            View.AddSubview(_changeBlurViewAlphaSlider);
 
             _scrollView.AddSubview(_titleLabel);
         }
@@ -156,6 +199,22 @@ namespace TestingTopHeader
             AutoLayoutToolBox.AlignLeftAnchorToLeftOf(_imageView, View);
             AutoLayoutToolBox.AlignRightAnchorToRightOf(_imageView, View);
             AutoLayoutToolBox.AlignTopToBottomOf(_imageView, _titleLabel);
+
+            AutoLayoutToolBox.AlignLeftAnchorToLeftOf(_valueLabel, View);
+            AutoLayoutToolBox.AlignRightAnchorToRightOf(_valueLabel, View);
+            _valueLabel.BottomAnchor.ConstraintEqualTo(_changePlainViewAlphaSlider.TopAnchor).Active = true;
+
+            _changeBlurViewAlphaSlider.TranslatesAutoresizingMaskIntoConstraints = false;
+            _changeBlurViewAlphaSlider.LeftAnchor.ConstraintEqualTo(View.LeftAnchor, 24).Active = true;
+            _changeBlurViewAlphaSlider.RightAnchor.ConstraintEqualTo(View.RightAnchor, -24).Active = true;
+            _changeBlurViewAlphaSlider.BottomAnchor.ConstraintEqualTo(_changePlainViewAlphaSlider.TopAnchor, -24).Active = true;
+            _changeBlurViewAlphaSlider.HeightAnchor.ConstraintEqualTo(100).Active = true;
+            _changeBlurViewAlphaSlider.LeftAnchor.ConstraintEqualTo(View.LeftAnchor, 24).Active = true;
+            _changePlainViewAlphaSlider.TranslatesAutoresizingMaskIntoConstraints = false;
+            _changePlainViewAlphaSlider.LeftAnchor.ConstraintEqualTo(View.LeftAnchor, 24).Active = true;
+            _changePlainViewAlphaSlider.RightAnchor.ConstraintEqualTo(View.RightAnchor, -24).Active = true;
+            _changePlainViewAlphaSlider.BottomAnchor.ConstraintEqualTo(View.BottomAnchor, -24).Active = true;
+            _changePlainViewAlphaSlider.HeightAnchor.ConstraintEqualTo(100).Active = true;
         }
     }
 }
