@@ -35,6 +35,8 @@ namespace TestingTopHeader
             InitializeOuterNav2Button();
             InitializeOuterNav3Button();
             InitializeOuterNav4Button();
+
+            InitializeTableViewButton();
         }
 
         public override void ViewWillAppear(bool animated)
@@ -187,6 +189,15 @@ namespace TestingTopHeader
                 var parentNavController = (UINavigationController)ParentViewController.ParentViewController.ParentViewController;
                 var useAnimation = _useAnimationSwitch.On;
                 parentNavController?.PushViewController(new OuterViewController4(), useAnimation);
+            };
+        }
+
+        private void InitializeTableViewButton()
+        {
+            var button = CreteButton("To tableview viewcontroller with large header", 400);
+            button.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                NavigationController?.PushViewController(new ViewControllerWithTableView(), true);
             };
         }
 

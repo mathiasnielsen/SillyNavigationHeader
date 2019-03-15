@@ -108,22 +108,22 @@ namespace TestingTopHeader
             _blurView02.TranslatesAutoresizingMaskIntoConstraints = false;
             var index = 1;
             var topOffset = (HeightOfNavBars * index) +  (SpacingBetweenNavBars * (index + 1));
-            _blurView02.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor, topOffset).Active = true;
-            _blurView02.LeftAnchor.ConstraintEqualTo(View.LeftAnchor).Active = true;
-            _blurView02.RightAnchor.ConstraintEqualTo(View.RightAnchor).Active = true;
-            _blurView02.HeightAnchor.ConstraintEqualTo(HeightOfNavBars).Active = true;
+            ////_blurView02.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor, topOffset).Active = true;
+            ////_blurView02.LeftAnchor.ConstraintEqualTo(View.LeftAnchor).Active = true;
+            ////_blurView02.RightAnchor.ConstraintEqualTo(View.RightAnchor).Active = true;
+            ////_blurView02.HeightAnchor.ConstraintEqualTo(HeightOfNavBars).Active = true;
 
-            vibrancyEffectView.TranslatesAutoresizingMaskIntoConstraints = false;
-            vibrancyEffectView.TopAnchor.ConstraintEqualTo(_blurView02.ContentView.TopAnchor).Active = true;
-            vibrancyEffectView.LeftAnchor.ConstraintEqualTo(_blurView02.ContentView.LeftAnchor).Active = true;
-            vibrancyEffectView.RightAnchor.ConstraintEqualTo(_blurView02.ContentView.RightAnchor).Active = true;
-            vibrancyEffectView.BottomAnchor.ConstraintEqualTo(_blurView02.ContentView.BottomAnchor).Active = true;
+            ////vibrancyEffectView.TranslatesAutoresizingMaskIntoConstraints = false;
+            ////vibrancyEffectView.TopAnchor.ConstraintEqualTo(_blurView02.ContentView.TopAnchor).Active = true;
+            ////vibrancyEffectView.LeftAnchor.ConstraintEqualTo(_blurView02.ContentView.LeftAnchor).Active = true;
+            ////vibrancyEffectView.RightAnchor.ConstraintEqualTo(_blurView02.ContentView.RightAnchor).Active = true;
+            ////vibrancyEffectView.BottomAnchor.ConstraintEqualTo(_blurView02.ContentView.BottomAnchor).Active = true;
 
-            _plainView02.TranslatesAutoresizingMaskIntoConstraints = false;
-            _plainView02.TopAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.TopAnchor).Active = true;
-            _plainView02.LeftAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.LeftAnchor).Active = true;
-            _plainView02.RightAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.RightAnchor).Active = true;
-            _plainView02.BottomAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.BottomAnchor).Active = true;
+            ////_plainView02.TranslatesAutoresizingMaskIntoConstraints = false;
+            ////_plainView02.TopAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.TopAnchor).Active = true;
+            ////_plainView02.LeftAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.LeftAnchor).Active = true;
+            ////_plainView02.RightAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.RightAnchor).Active = true;
+            ////_plainView02.BottomAnchor.ConstraintEqualTo(vibrancyEffectView.ContentView.BottomAnchor).Active = true;
         }
 
         private void InitializeUIElements()

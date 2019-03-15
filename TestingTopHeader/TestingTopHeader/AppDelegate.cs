@@ -26,7 +26,7 @@ namespace TestingTopHeader
 
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-            var pagesToTest = PagesToTest.FakeTranslucency;
+            var pagesToTest = PagesToTest.TransitionPages;
             switch (pagesToTest)
             {
                 case PagesToTest.TransitionPages:
