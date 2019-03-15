@@ -4,8 +4,9 @@ using UIKit;
 
 namespace TestingTopHeader
 {
-    public class ViewControllerWithTableView : UIViewController
+    public class ViewControllerWithTableView : UIViewController, IUIGestureRecognizerDelegate
     {
+        private UIView _contentView;
         private UITableView _tableView;
 
         public override void ViewDidLoad()
@@ -15,9 +16,9 @@ namespace TestingTopHeader
             Title = "Tableview large header";
 
             _tableView = new UITableView();
-            View.AddSubview(_tableView);
+            _contentView.AddSubview(_tableView);
 
-            AutoLayoutToolBox.AlignToFullConstraints(_tableView, View);
+            AutoLayoutToolBox.AlignToFullConstraints(_tableView, _contentView);
 
 
             var items = new string[]
@@ -46,12 +47,40 @@ namespace TestingTopHeader
             Test();
         }
 
+        private void InitializeContentView()
+        {
+            _contentView = new UIView();
+            View.AddSubview(_contentView);
+
+            _contentView.TranslatesAutoresizingMaskIntoConstraints = false;
+            _contentView.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor).Active = true;
+            _contentView.LeftAnchor.ConstraintEqualTo(View.LeftAnchor).Active = true;
+            _contentView.RightAnchor.ConstraintEqualTo(View.RightAnchor).Active = true;
+            _contentView.BottomAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.BottomAnchor).Active = true;
+        }
+
         private void Test()
         {
+            if (NavigationController != null)
+            {
+                NavigationController.InteractivePopGestureRecognizer.Delegate = this;
+            }
+
             if (NavigationItem != null)
             {
                 NavigationItem.HidesBackButton = false;
             }
+
+            // TODO Should be in disappear
+            ////var isLargeTitleShown = NavigationController?.NavigationBar.Frame.Height > 44;
+            ////if (isLargeTitleShown)
+            ////{
+            ////    NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Always;
+            ////}
+            ////else
+            ////{
+            ////    NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
+            ////}
         }
 
         private class TableSource : UITableViewSource
@@ -68,6 +97,11 @@ namespace TestingTopHeader
             public override nint RowsInSection(UITableView tableview, nint section)
             {
                 return TableItems.Length;
+            }
+
+            public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+            {
+                return 44;
             }
 
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
